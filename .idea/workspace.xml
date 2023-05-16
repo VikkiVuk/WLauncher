@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="886fb8d8-767a-48c8-bd76-e7b5717013cb" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2Pmits0LDMFbo6krvVuW54l5Lhb" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "dart.analysis.tool.window.visible": "false",
+    "ignore.virus.scanning.warn.message": "true",
+    "io.flutter.reload.alreadyRun": "true",
+    "last_opened_file_path": "D:/FlutterApps/wlauncher/lib/pages/main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "show.migrate.to.gradle.popup": "false",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\FlutterApps\wlauncher\lib\pages\main" />
+      <recent name="D:\FlutterApps\wlauncher\assets\icons" />
+      <recent name="D:\FlutterApps\wlauncher\assets\backdrops" />
+      <recent name="D:\FlutterApps\wlauncher\assets" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\FlutterApps\wlauncher\lib\pages\main\instances" />
+      <recent name="D:\FlutterApps\wlauncher\lib\pages\main" />
+      <recent name="D:\FlutterApps\wlauncher\lib\pages" />
+      <recent name="D:\FlutterApps\wlauncher\assets" />
+      <recent name="D:\FlutterApps\wlauncher\assets\icons" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="886fb8d8-767a-48c8-bd76-e7b5717013cb" name="Changes" comment="" />
+      <created>1684068931419</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1684068931419</updated>
+      <workItem from="1684068932724" duration="28000" />
+      <workItem from="1684068984564" duration="13357000" />
+      <workItem from="1684087676016" duration="5294000" />
+      <workItem from="1684094778798" duration="12552000" />
+      <workItem from="1684150636235" duration="4225000" />
+      <workItem from="1684155691822" duration="5803000" />
+      <workItem from="1684185849607" duration="1729000" />
+      <workItem from="1684189272327" duration="4823000" />
+      <workItem from="1684263650177" duration="2000" />
+      <workItem from="1684263917390" duration="2346000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
