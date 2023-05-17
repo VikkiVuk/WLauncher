@@ -38,7 +38,7 @@ class _SidebarState extends State<Sidebar> {
       launchUrlString("https://discord.gg/vtJr7RBfZd");
       return;
     } else if (button == 5) {
-      launchUrlString("https://github.com");
+      launchUrlString("https://github.com/VikkiVuk/WLauncher");
       return;
     } else if (button == 6) {
       onSidebarButtonPressed("updates");

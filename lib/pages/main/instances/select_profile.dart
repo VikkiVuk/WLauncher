@@ -33,8 +33,8 @@ class _SelectProfileState extends State<SelectProfile> {
     }
   }
 
-  void addVersionClicked() {
-    print("add version");
+  void addProfileClicked() {
+    print("add profile");
   }
 
   void selectProfileClicked(String profile) {
@@ -103,7 +103,7 @@ class _SelectProfileState extends State<SelectProfile> {
                     }, itemCount: profiles.length),
                   ))]),
                 Padding(padding: const EdgeInsets.only(left: 40, right: 40, top: 500), child: GestureDetector(
-                  onTap: () => {addVersionClicked()},
+                  onTap: () => {addProfileClicked()},
                   child: MouseRegion(
                     cursor: SystemMouseCursors.click,
                     child: Container(
@@ -116,7 +116,7 @@ class _SelectProfileState extends State<SelectProfile> {
                           border: Border.all(color: (profiles.length >= 5) ? const Color(0xff000000) : const Color(0xFF007BFF), width: 5),
                         ),
                         child: const Center(
-                          child: Text("+ ADD VERSION", style: TextStyle(color: Color(0XFFFFFFFF), fontSize: 24, fontWeight: FontWeight.w900)),
+                          child: Text("+ ADD PROFILE", style: TextStyle(color: Color(0XFFFFFFFF), fontSize: 24, fontWeight: FontWeight.w900)),
                         )
                     ),
                   ),

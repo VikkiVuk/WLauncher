@@ -16,7 +16,15 @@ class MainInstance extends StatefulWidget {
 class _MainInstanceState extends State<MainInstance> {
   String _selectedVersion = "1.18.2";
   String _selectedProfile = "Vanilla";
-  List<String> mods = ["Optifine", "Pure Chaos", "Cma", "Bruh", "Kruh", "Cc", "ccccccc"];
+  List<String> mods = ["Optifine", "Pure Chaos", "Cma", "Bruh", "Kruh", "Cc", "ccccccc", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "ccccccc", "ccccccc", "ccccccc", "ccccccc", "ccccccc", "ccccccc", "ccccccc", "ccccccc", "ccccccc", "ccccccc", "ccccccc", "ccccccc", "ccccccc"];
+
+  @override
+  void initState() {
+    super.initState();
+
+    _selectedVersion = widget.selectedVersion;
+    _selectedProfile = widget.selectedProfile;
+  }
 
   void sidebarButtonClicked(String button) {
     if (button == "play") {
@@ -56,16 +64,14 @@ class _MainInstanceState extends State<MainInstance> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Padding(padding: const EdgeInsets.only(top: 30, left: 30), child: Text(_selectedProfile, style: const TextStyle(color: Colors.white, fontSize: 32, fontWeight: FontWeight.w700))),
-                    SizedBox(
-                      width: 500, // Set your desired fixed container width
-                      height: 300, // Set your desired fixed container height
-                      child: SingleChildScrollView(
-                        scrollDirection: Axis.horizontal,
-                        child: Row(
-                          children: [
-                            Expanded(child: GridView.builder(
+                    Stack(
+                        children: [
+                          Container(
+                            width: 879,
+                            height: 400,
+                            margin: const EdgeInsets.only(top: 10, left: 20, right: 30),
+                            child: GridView.builder(
                               shrinkWrap: true,
-                              physics: const NeverScrollableScrollPhysics(),
                               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                                 crossAxisCount: 5, // Maximum 5 items on the horizontal side
                               ),
@@ -74,16 +80,77 @@ class _MainInstanceState extends State<MainInstance> {
                                 return Container(
                                   width: 100,
                                   height: 100,
-                                  child: Center(
-                                    child: Text(mods[index]),
+                                  margin: const EdgeInsets.all(10),
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(10),
+                                    color: const Color(0xFF0c0c0c),
+                                  ),
+                                  child: Column(
+                                    children: [
+                                      Padding(padding: const EdgeInsets.only(top: 20, left: 20, right: 20), child: Text(mods[index], style: const TextStyle(color: Colors.white, overflow: TextOverflow.ellipsis, fontSize: 16, fontWeight: FontWeight.w700))),
+                                      Padding(
+                                        padding: const EdgeInsets.only(top: 15),
+                                        child: GestureDetector(
+                                          onTap: () => removeModClicked(mods[index]),
+                                          child: MouseRegion(
+                                            cursor: SystemMouseCursors.click,
+                                            child: Container(
+                                              width: 100,
+                                              height: 30,
+                                              decoration: BoxDecoration(
+                                                borderRadius: BorderRadius.circular(10),
+                                                color: const Color(0xFF000000),
+                                              ),
+                                              child: const Center(child: Text("uninstall", style: TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.normal), textAlign: TextAlign.center)),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                      Padding(
+                                        padding: const EdgeInsets.only(top: 8),
+                                        child: GestureDetector(
+                                          onTap: () => removeModClicked(mods[index]),
+                                          child: MouseRegion(
+                                            cursor: SystemMouseCursors.click,
+                                            child: Container(
+                                              width: 100,
+                                              height: 30,
+                                              decoration: BoxDecoration(
+                                                borderRadius: BorderRadius.circular(10),
+                                                color: const Color(0xFF000000),
+                                              ),
+                                              child: const Center(child: Text("disable", style: TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.normal), textAlign: TextAlign.center)),
+                                            ),
+                                          ),
+                                        ),
+                                      )
+                                    ],
                                   ),
                                 );
                               },
-                            ))
-                          ],
-                        ),
-                      ),
-                    )]),
+                            ),
+                          ),
+                          Padding(padding: const EdgeInsets.only(left: 40, right: 40, top: 440), child: GestureDetector(
+                            onTap: () => {print("add mods")},
+                            child: MouseRegion(
+                              cursor: SystemMouseCursors.click,
+                              child: Container(
+                                  width: 807,
+                                  height: 79,
+                                  alignment: Alignment.center,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(14),
+                                    color: Colors.transparent,
+                                    border: Border.all(color: const Color(0xFF007BFF), width: 5),
+                                  ),
+                                  child: const Center(
+                                    child: Text("+ ADD MODS", style: TextStyle(color: Color(0XFFFFFFFF), fontSize: 24, fontWeight: FontWeight.w900)),
+                                  )
+                              ),
+                            ),
+                          ),)
+                        ])
+                  ]),
             )
           ],
         ),

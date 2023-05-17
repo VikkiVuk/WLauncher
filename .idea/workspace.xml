@@ -4,11 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="886fb8d8-767a-48c8-bd76-e7b5717013cb" name="Changes" comment="" />
+    <list default="true" id="886fb8d8-767a-48c8-bd76-e7b5717013cb" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/main/instances/main_instance.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/main/instances/main_instance.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/main/instances/select_profile.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/main/instances/select_profile.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/main/sidebar.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/main/sidebar.dart" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -24,6 +33,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "dart.analysis.tool.window.visible": "false",
+    "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "io.flutter.reload.alreadyRun": "true",
     "last_opened_file_path": "D:/FlutterApps/wlauncher/lib/pages/main",
@@ -68,7 +78,7 @@
       <workItem from="1684185849607" duration="1729000" />
       <workItem from="1684189272327" duration="4823000" />
       <workItem from="1684263650177" duration="2000" />
-      <workItem from="1684263917390" duration="2346000" />
+      <workItem from="1684263917390" duration="7166000" />
     </task>
     <servers />
   </component>
