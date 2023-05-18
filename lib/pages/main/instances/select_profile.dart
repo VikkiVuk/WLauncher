@@ -44,10 +44,11 @@ class _SelectProfileState extends State<SelectProfile> {
   void selectProfileClicked(String profile) {
     _selectedProfile = profile;
 
-    Navigator.push(
-      context,
-      MaterialPageRoute(builder: (context) => MainInstance(selectedProfile: _selectedProfile, selectedVersion: _selectedVersion, navigatorKey: widget.navigatorKey)),
-    );
+    if (profile == "Vanilla") {
+      widget.navigatorKey.currentState!.push(MaterialPageRoute(builder: (context) => PlayGame(navigatorKey: widget.navigatorKey, selectedVersion: _selectedVersion, selectedProfile: _selectedProfile)));
+    } else {
+      widget.navigatorKey.currentState!.push(MaterialPageRoute(builder: (context) => MainInstance(navigatorKey: widget.navigatorKey, selectedVersion: _selectedVersion, selectedProfile: _selectedProfile)));
+    }
   }
 
   @override

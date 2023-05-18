@@ -88,12 +88,12 @@ class _PlayGameState extends State<PlayGame> {
                               Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  const Padding(padding: EdgeInsets.only(top: 15), child: Text("PLAY MINECRAFT", style: TextStyle(color: Color(0xFF4c4c4c), fontSize: 16, fontWeight: FontWeight.w900)),),
+                                  const Padding(padding: EdgeInsets.only(top: 20), child: Text("PLAY MINECRAFT", style: TextStyle(color: Color(0xFF4c4c4c), fontSize: 16, fontWeight: FontWeight.w900)),),
                                   Row(
                                     crossAxisAlignment: CrossAxisAlignment.end,
                                     mainAxisAlignment: MainAxisAlignment.end,
                                     children: [
-                                      Padding(padding: const EdgeInsets.only(top: 10), child:
+                                      Padding(padding: const EdgeInsets.only(top: 5), child:
                                         Text(_selectedVersion, style: const TextStyle(color: Color(0xFF969696), fontSize: 32, fontWeight: FontWeight.w600)),
                                       ),
                                       if (_selectedProfile != "Vanilla") Padding(padding: const EdgeInsets.only(left: 8, top: 10), child:

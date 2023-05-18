@@ -5,14 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="886fb8d8-767a-48c8-bd76-e7b5717013cb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/assets/icons/upload.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/pages/main/get_modpacks.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/pages/main/get_resourcepacks.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/main/get_modpacks.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/main/get_modpacks.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/main/get_resourcepacks.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/main/get_resourcepacks.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/pages/main/instances/get_mods.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/main/instances/get_mods.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/main/instances/main_instance.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/main/instances/main_instance.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/pages/main/instances/select_profile.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/main/instances/select_profile.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/main/instances/select_version.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/main/instances/select_version.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/pages/main/play_game.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/main/play_game.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -88,7 +85,7 @@
       <workItem from="1684263917390" duration="7166000" />
       <workItem from="1684336001103" duration="960000" />
       <workItem from="1684338907163" duration="6761000" />
-      <workItem from="1684402390557" duration="7918000" />
+      <workItem from="1684402390557" duration="9545000" />
     </task>
     <servers />
   </component>

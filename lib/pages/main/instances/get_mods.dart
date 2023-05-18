@@ -86,7 +86,7 @@ class _GetModsState extends State<GetMods> {
                 children: [
                   SizedBox(
                       width: 879,
-                      height: 500,
+                      height: 460,
                       child: ListView.builder(itemCount: mods.length, itemBuilder: (context, index) {
                         return Container(
                           height: 135,
@@ -161,7 +161,7 @@ class _GetModsState extends State<GetMods> {
                     ),
                     width: 840,
                     height: 134,
-                    margin: const EdgeInsets.only(top: 430, left: 20),
+                    margin: const EdgeInsets.only(top: 460, left: 20),
                     child: Padding(
                         padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 30),
                         child: Row(
