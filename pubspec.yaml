@@ -10,11 +10,15 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  cupertino_icons: ^1.0.2
   window_manager: ^0.3.2
   url_launcher: ^6.1.11
   flutter_svg: ^2.0.5
-  dropdown_search: ^5.0.6
+  animated_text_kit: ^4.2.2
+  shimmer: ^2.0.0
+  window_size:
+    git:
+      url: https://github.com/google/flutter-desktop-embedding
+      path: plugins/window_size
 
 dev_dependencies:
   flutter_test:

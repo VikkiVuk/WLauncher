@@ -1,41 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 import 'package:window_manager/window_manager.dart';
-import 'package:dropdown_search/dropdown_search.dart';
 import 'package:wlauncher/pages/main/instances/select_version.dart';
 import 'package:wlauncher/pages/main/sidebar.dart';
-
-void main() {
-  WidgetsFlutterBinding.ensureInitialized();
-  windowManager.ensureInitialized();
-
-  WindowOptions windowOptions = const WindowOptions(
-    size: Size(1123, 655),
-    center: true,
-    backgroundColor: Colors.transparent,
-    skipTaskbar: false,
-    titleBarStyle: TitleBarStyle.hidden,
-    minimumSize: Size(1123, 655),
-    maximumSize: Size(1123, 655),
-  );
-
-  windowManager.waitUntilReadyToShow(windowOptions, () async {
-    await windowManager.show();
-    await windowManager.focus();
-    await windowManager.center();
-  });
-
-  runApp(const MaterialApp(
-    debugShowCheckedModeBanner: false,
-    home: PlayGame(),
-  ));
-}
 
 class PlayGame extends StatefulWidget {
   final selectedVersion;
   final selectedProfile;
+  final GlobalKey<NavigatorState> navigatorKey;
 
-  const PlayGame({Key? key, this.selectedProfile, this.selectedVersion}) : super(key: key);
+  const PlayGame({Key? key, this.selectedProfile, this.selectedVersion, required this.navigatorKey}) : super(key: key);
 
   @override
   _PlayGameState createState() => _PlayGameState();
@@ -46,18 +20,19 @@ class _PlayGameState extends State<PlayGame> {
   String _selectedProfile = "Vanilla";
 
   void setWindowSize(Size size) async {
-    await windowManager.setSize(size, animate: true);
-    await windowManager.setMinimumSize(size);
-    await windowManager.setMaximumSize(size);
-
-    await windowManager.center();
+    WindowManager.instance.setSize(size, animate: true);
+    WindowManager.instance.center();
+    WindowManager.instance.setMinimumSize(size);
+    WindowManager.instance.setMaximumSize(size);
   }
 
   @override
   void initState() {
     super.initState();
 
-    setWindowSize(const Size(1123, 655));
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      setWindowSize(const Size(1123, 655));
+    });
 
     if (widget.selectedVersion != null) {
       _selectedVersion = widget.selectedVersion;
@@ -70,10 +45,7 @@ class _PlayGameState extends State<PlayGame> {
 
   void sidebarButtonClicked(String button) {
     if (button == "instances") {
-      Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => const SelectVersion()),
-      );
+      widget.navigatorKey.currentState!.push(MaterialPageRoute(builder: (context) => SelectVersion(navigatorKey: widget.navigatorKey)));
     }
   }
 
@@ -83,8 +55,6 @@ class _PlayGameState extends State<PlayGame> {
 
   @override
   Widget build(BuildContext context) {
-    setWindowSize(const Size(1123, 655));
-
     return Material(
         child: Directionality(textDirection: TextDirection.ltr, child: Row(
           children: [

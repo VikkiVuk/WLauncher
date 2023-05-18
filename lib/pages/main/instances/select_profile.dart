@@ -5,8 +5,9 @@ import 'package:wlauncher/pages/main/sidebar.dart';
 
 class SelectProfile extends StatefulWidget {
   final String selectedVersion;
+  final GlobalKey<NavigatorState> navigatorKey;
 
-  const SelectProfile({Key? key, required this.selectedVersion}) : super(key: key);
+  const SelectProfile({Key? key, required this.selectedVersion, required this.navigatorKey}) : super(key: key);
 
   @override
   _SelectProfileState createState() => _SelectProfileState();
@@ -26,10 +27,7 @@ class _SelectProfileState extends State<SelectProfile> {
 
   void sidebarButtonClicked(String button) {
     if (button == "play") {
-      Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => PlayGame(selectedProfile: _selectedProfile, selectedVersion: _selectedVersion)),
-      );
+      widget.navigatorKey.currentState!.push(MaterialPageRoute(builder: (context) => PlayGame(selectedVersion: _selectedVersion, navigatorKey: widget.navigatorKey)));
     }
   }
 
@@ -42,7 +40,7 @@ class _SelectProfileState extends State<SelectProfile> {
 
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => MainInstance(selectedProfile: _selectedProfile, selectedVersion: _selectedVersion)),
+      MaterialPageRoute(builder: (context) => MainInstance(selectedProfile: _selectedProfile, selectedVersion: _selectedVersion, navigatorKey: widget.navigatorKey)),
     );
   }
 

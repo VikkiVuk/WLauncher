@@ -2,40 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:window_manager/window_manager.dart';
 import 'package:wlauncher/pages/login.dart';
 
-void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-
-  await windowManager.ensureInitialized();
-
-  WindowOptions windowOptions = const WindowOptions(
-    size: Size(884, 503),
-    center: true,
-    backgroundColor: Colors.transparent,
-    skipTaskbar: false,
-    titleBarStyle: TitleBarStyle.hidden,
-    minimumSize: Size(884, 503),
-    maximumSize: Size(884, 503),
-  );
-  windowManager.waitUntilReadyToShow(windowOptions, () async {
-    await windowManager.show();
-    await windowManager.focus();
-  });
-
-  runApp(const MaterialApp(
-    debugShowCheckedModeBanner: false,
-    home: AccountPickerPage(),
-  ));
-}
-
 class AccountPickerPage extends StatelessWidget {
   const AccountPickerPage({Key? key}) : super(key: key);
 
   void setWindowSize(Size size) async {
-    await windowManager.setSize(size, animate: true);
-    await windowManager.setMinimumSize(size);
-    await windowManager.setMaximumSize(size);
-
-    await windowManager.center();
+    WindowManager.instance.setSize(size, animate: true);
+    WindowManager.instance.center();
+    WindowManager.instance.setMinimumSize(size);
+    WindowManager.instance.setMaximumSize(size);
   }
 
   @override

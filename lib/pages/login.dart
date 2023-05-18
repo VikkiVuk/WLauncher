@@ -3,28 +3,6 @@ import 'package:flutter/services.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 import 'package:window_manager/window_manager.dart';
 
-void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-
-  await windowManager.ensureInitialized();
-
-  WindowOptions windowOptions = const WindowOptions(
-    size: Size(672, 358),
-    center: true,
-    backgroundColor: Colors.transparent,
-    skipTaskbar: false,
-    titleBarStyle: TitleBarStyle.hidden,
-    minimumSize: Size(672, 358),
-    maximumSize: Size(672, 358),
-  );
-  windowManager.waitUntilReadyToShow(windowOptions, () async {
-    await windowManager.show();
-    await windowManager.focus();
-  });
-
-  runApp(const Login());
-}
-
 class Login extends StatefulWidget {
   const Login({super.key});
 
@@ -40,18 +18,19 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
   double _containerPosition = 16.0;
 
   void setWindowSize(Size size) async {
-    await windowManager.setSize(size, animate: true);
-    await windowManager.setMinimumSize(size);
-    await windowManager.setMaximumSize(size);
-
-    await windowManager.center();
+    WindowManager.instance.setSize(size, animate: true);
+    WindowManager.instance.center();
+    WindowManager.instance.setMinimumSize(size);
+    WindowManager.instance.setMaximumSize(size);
   }
 
   @override
   void initState() {
     super.initState();
 
-    setWindowSize(const Size(672, 358));
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      setWindowSize(const Size(672, 358));
+    });
 
     _controller = AnimationController(
       vsync: this,

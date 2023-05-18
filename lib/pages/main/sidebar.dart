@@ -41,8 +41,11 @@ class _SidebarState extends State<Sidebar> {
       launchUrlString("https://github.com/VikkiVuk/WLauncher");
       return;
     } else if (button == 6) {
-      onSidebarButtonPressed("updates");
+      launchUrlString("https://vikkivuk.com/donate");
+      return;
     } else if (button == 7) {
+      onSidebarButtonPressed("updates");
+    } else if (button == 8) {
       onSidebarButtonPressed("settings");
     }
 
@@ -100,9 +103,10 @@ class _SidebarState extends State<Sidebar> {
                 const SizedBox(height: 5),
                 SidebarButton(text: "Community", image: "assets/icons/group.svg", onSidebarButtonPressed: onSidebarButtonPressedInternal, onSidebarButtonHover: onSidebarButtonHover, onSidebarButtonHoverExit: onSidebarButtonHoverExit, getButtonColor: getButtonColor, button: 4),
                 SidebarButton(text: "Source Code", image: "assets/icons/github.svg", onSidebarButtonPressed: onSidebarButtonPressedInternal, onSidebarButtonHover: onSidebarButtonHover, onSidebarButtonHoverExit: onSidebarButtonHoverExit, getButtonColor: getButtonColor, button: 5),
-                const SizedBox(height: 150),
-                SidebarButton(text: "Updates", image: "assets/icons/download.svg", onSidebarButtonPressed: onSidebarButtonPressedInternal, onSidebarButtonHover: onSidebarButtonHover, onSidebarButtonHoverExit: onSidebarButtonHoverExit, getButtonColor: getButtonColor, button: 6),
-                SidebarButton(text: "Settings", image: "assets/icons/settings.svg", onSidebarButtonPressed: onSidebarButtonPressedInternal, onSidebarButtonHover: onSidebarButtonHover, onSidebarButtonHoverExit: onSidebarButtonHoverExit, getButtonColor: getButtonColor, button: 7),
+                SidebarButton(text: "Donate", image: "assets/icons/heart.svg", onSidebarButtonPressed: onSidebarButtonPressedInternal, onSidebarButtonHover: onSidebarButtonHover, onSidebarButtonHoverExit: onSidebarButtonHoverExit, getButtonColor: getButtonColor, button: 6),
+                const SizedBox(height: 110),
+                SidebarButton(text: "Updates", image: "assets/icons/download.svg", onSidebarButtonPressed: onSidebarButtonPressedInternal, onSidebarButtonHover: onSidebarButtonHover, onSidebarButtonHoverExit: onSidebarButtonHoverExit, getButtonColor: getButtonColor, button: 7),
+                SidebarButton(text: "Settings", image: "assets/icons/settings.svg", onSidebarButtonPressed: onSidebarButtonPressedInternal, onSidebarButtonHover: onSidebarButtonHover, onSidebarButtonHoverExit: onSidebarButtonHoverExit, getButtonColor: getButtonColor, button: 8),
               ],
             ))
           ]),
@@ -126,19 +130,19 @@ class SidebarButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
         padding: const EdgeInsets.symmetric(vertical: 8),
-        child: MouseRegion(
-          cursor: SystemMouseCursors.click,
-          onEnter: (_) => onSidebarButtonHover(button),
-          onExit: (_) => onSidebarButtonHoverExit(button),
-          child: GestureDetector(
-            onTap: () => onSidebarButtonPressed(button),
+        child: GestureDetector(
+          onTap: () => onSidebarButtonPressed(button),
+          child: MouseRegion(
+            cursor: SystemMouseCursors.click,
+            onEnter: (_) => onSidebarButtonHover(button),
+            onExit: (_) => onSidebarButtonHoverExit(button),
             child: Row(
               children: [
                 SvgPicture.asset(image, width: 23, height: 23, color: getButtonColor(button)),
                 Padding(padding: const EdgeInsets.only(left: 16, right: 16), child: Text(text, style: TextStyle(color: getButtonColor(button), fontSize: 16, fontWeight: FontWeight.normal)))
               ],
             ),
-          ),
+          )
         )
     );
   }

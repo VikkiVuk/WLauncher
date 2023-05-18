@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:wlauncher/main.dart';
+import 'package:wlauncher/pages/main/instances/get_mods.dart';
 import 'package:wlauncher/pages/main/instances/select_profile.dart';
 import 'package:wlauncher/pages/main/play_game.dart';
 import 'package:wlauncher/pages/main/sidebar.dart';
@@ -6,8 +8,9 @@ import 'package:wlauncher/pages/main/sidebar.dart';
 class MainInstance extends StatefulWidget {
   final selectedVersion;
   final selectedProfile;
+  final GlobalKey<NavigatorState> navigatorKey;
 
-  const MainInstance({Key? key, this.selectedProfile, this.selectedVersion}) : super(key: key);
+  const MainInstance({Key? key, this.selectedProfile, this.selectedVersion, required this.navigatorKey}) : super(key: key);
 
   @override
   _MainInstanceState createState() => _MainInstanceState();
@@ -28,20 +31,12 @@ class _MainInstanceState extends State<MainInstance> {
 
   void sidebarButtonClicked(String button) {
     if (button == "play") {
-      Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => PlayGame(selectedProfile: _selectedProfile, selectedVersion: _selectedVersion)),
-      );
+      widget.navigatorKey.currentState!.push(MaterialPageRoute(builder: (context) => PlayGame(selectedVersion: _selectedVersion, selectedProfile: _selectedProfile, navigatorKey: widget.navigatorKey)));
     }
   }
 
-  void addModsClicked(String version) {
-    _selectedVersion = version;
-
-    Navigator.push(
-      context,
-      MaterialPageRoute(builder: (context) => SelectProfile(selectedVersion: _selectedVersion)),
-    );
+  void addModsClicked() {
+    widget.navigatorKey.currentState!.push(MaterialPageRoute(builder: (context) => GetMods(selectedVersion: _selectedVersion, selectedProfile: _selectedProfile, navigatorKey: widget.navigatorKey)));
   }
 
   void removeModClicked(String mod) {
@@ -131,7 +126,7 @@ class _MainInstanceState extends State<MainInstance> {
                             ),
                           ),
                           Padding(padding: const EdgeInsets.only(left: 40, right: 40, top: 440), child: GestureDetector(
-                            onTap: () => {print("add mods")},
+                            onTap: () => {addModsClicked()},
                             child: MouseRegion(
                               cursor: SystemMouseCursors.click,
                               child: Container(
