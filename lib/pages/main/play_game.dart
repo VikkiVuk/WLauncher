@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 import 'package:window_manager/window_manager.dart';
+import 'package:wlauncher/pages/main/get_modpacks.dart';
+import 'package:wlauncher/pages/main/get_resourcepacks.dart';
 import 'package:wlauncher/pages/main/instances/select_version.dart';
 import 'package:wlauncher/pages/main/sidebar.dart';
 
@@ -46,6 +48,10 @@ class _PlayGameState extends State<PlayGame> {
   void sidebarButtonClicked(String button) {
     if (button == "instances") {
       widget.navigatorKey.currentState!.push(MaterialPageRoute(builder: (context) => SelectVersion(navigatorKey: widget.navigatorKey)));
+    } else if (button == "modpacks") {
+      widget.navigatorKey.currentState!.push(MaterialPageRoute(builder: (context) => GetModpacks(navigatorKey: widget.navigatorKey)));
+    } else if (button == "resourcepacks") {
+      widget.navigatorKey.currentState!.push(MaterialPageRoute(builder: (context) => GetResourcepacks(navigatorKey: widget.navigatorKey)));
     }
   }
 

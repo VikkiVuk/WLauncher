@@ -33,7 +33,7 @@ class _SidebarState extends State<Sidebar> {
     } else if (button == 2) {
       onSidebarButtonPressed("modpacks");
     } else if (button == 3) {
-      onSidebarButtonPressed("resource_packs");
+      onSidebarButtonPressed("resourcepacks");
     } else if (button == 4) {
       launchUrlString("https://discord.gg/vtJr7RBfZd");
       return;

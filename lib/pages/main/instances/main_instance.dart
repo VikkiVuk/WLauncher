@@ -5,6 +5,9 @@ import 'package:wlauncher/pages/main/instances/select_profile.dart';
 import 'package:wlauncher/pages/main/play_game.dart';
 import 'package:wlauncher/pages/main/sidebar.dart';
 
+import '../get_modpacks.dart';
+import '../get_resourcepacks.dart';
+
 class MainInstance extends StatefulWidget {
   final selectedVersion;
   final selectedProfile;
@@ -31,7 +34,11 @@ class _MainInstanceState extends State<MainInstance> {
 
   void sidebarButtonClicked(String button) {
     if (button == "play") {
-      widget.navigatorKey.currentState!.push(MaterialPageRoute(builder: (context) => PlayGame(selectedVersion: _selectedVersion, selectedProfile: _selectedProfile, navigatorKey: widget.navigatorKey)));
+      widget.navigatorKey.currentState!.push(MaterialPageRoute(builder: (context) => PlayGame(navigatorKey: widget.navigatorKey, selectedProfile: _selectedProfile, selectedVersion: _selectedVersion)));
+    } else if (button == "modpacks") {
+      widget.navigatorKey.currentState!.push(MaterialPageRoute(builder: (context) => GetModpacks(navigatorKey: widget.navigatorKey)));
+    } else if (button == "resourcepacks") {
+      widget.navigatorKey.currentState!.push(MaterialPageRoute(builder: (context) => GetResourcepacks(navigatorKey: widget.navigatorKey)));
     }
   }
 

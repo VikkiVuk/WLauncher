@@ -3,6 +3,9 @@ import 'package:wlauncher/pages/main/instances/main_instance.dart';
 import 'package:wlauncher/pages/main/play_game.dart';
 import 'package:wlauncher/pages/main/sidebar.dart';
 
+import '../get_modpacks.dart';
+import '../get_resourcepacks.dart';
+
 class SelectProfile extends StatefulWidget {
   final String selectedVersion;
   final GlobalKey<NavigatorState> navigatorKey;
@@ -27,10 +30,13 @@ class _SelectProfileState extends State<SelectProfile> {
 
   void sidebarButtonClicked(String button) {
     if (button == "play") {
-      widget.navigatorKey.currentState!.push(MaterialPageRoute(builder: (context) => PlayGame(selectedVersion: _selectedVersion, navigatorKey: widget.navigatorKey)));
+      widget.navigatorKey.currentState!.push(MaterialPageRoute(builder: (context) => PlayGame(navigatorKey: widget.navigatorKey)));
+    } else if (button == "modpacks") {
+      widget.navigatorKey.currentState!.push(MaterialPageRoute(builder: (context) => GetModpacks(navigatorKey: widget.navigatorKey)));
+    } else if (button == "resourcepacks") {
+      widget.navigatorKey.currentState!.push(MaterialPageRoute(builder: (context) => GetResourcepacks(navigatorKey: widget.navigatorKey)));
     }
   }
-
   void addProfileClicked() {
     print("add profile");
   }

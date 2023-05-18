@@ -5,26 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="886fb8d8-767a-48c8-bd76-e7b5717013cb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/assets/icons/heart.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/pages/main/instances/get_mods.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icons/upload.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pages/main/get_modpacks.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pages/main/get_resourcepacks.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/account_picker.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/account_picker.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/login.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/login.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/main/instances/add_mods.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/loading.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/main/instances/get_mods.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/main/instances/get_mods.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/pages/main/instances/main_instance.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/main/instances/main_instance.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/pages/main/instances/select_profile.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/main/instances/select_profile.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/pages/main/instances/select_version.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/main/instances/select_version.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/pages/main/play_game.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/main/play_game.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/main/sidebar.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/main/sidebar.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/linux/flutter/generated_plugin_registrant.cc" beforeDir="false" afterPath="$PROJECT_DIR$/linux/flutter/generated_plugin_registrant.cc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/linux/flutter/generated_plugins.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/linux/flutter/generated_plugins.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/macos/Flutter/GeneratedPluginRegistrant.swift" beforeDir="false" afterPath="$PROJECT_DIR$/macos/Flutter/GeneratedPluginRegistrant.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/windows/flutter/generated_plugin_registrant.cc" beforeDir="false" afterPath="$PROJECT_DIR$/windows/flutter/generated_plugin_registrant.cc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/windows/flutter/generated_plugins.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/windows/flutter/generated_plugins.cmake" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,25 +34,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;io.flutter.reload.alreadyRun&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/FlutterApps/wlauncher/lib/pages/main&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "dart.analysis.tool.window.visible": "false",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "io.flutter.reload.alreadyRun": "true",
+    "last_opened_file_path": "D:/FlutterApps/wlauncher/lib/pages/main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "show.migrate.to.gradle.popup": "false",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\FlutterApps\wlauncher\lib\pages\main" />
@@ -99,7 +88,7 @@
       <workItem from="1684263917390" duration="7166000" />
       <workItem from="1684336001103" duration="960000" />
       <workItem from="1684338907163" duration="6761000" />
-      <workItem from="1684402390557" duration="5886000" />
+      <workItem from="1684402390557" duration="7918000" />
     </task>
     <servers />
   </component>

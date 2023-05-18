@@ -1,24 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:wlauncher/pages/main/get_modpacks.dart';
+import 'package:wlauncher/pages/main/instances/select_version.dart';
 import 'package:wlauncher/pages/main/play_game.dart';
 import 'package:wlauncher/pages/main/sidebar.dart';
 
-import '../get_modpacks.dart';
-import '../get_resourcepacks.dart';
-
-class GetMods extends StatefulWidget {
-  final String selectedVersion;
-  final String selectedProfile;
+class GetResourcepacks extends StatefulWidget {
   final GlobalKey<NavigatorState> navigatorKey;
 
-  const GetMods({Key? key, required this.selectedVersion, required this.selectedProfile, required this.navigatorKey}) : super(key: key);
+  const GetResourcepacks({Key? key, required this.navigatorKey}) : super(key: key);
 
   @override
-  _GetModsState createState() => _GetModsState();
+  _GetResourcepacksState createState() => _GetResourcepacksState();
 }
 
-class Mod {
+class Resourcepack {
   final String image;
   final String name;
   final String version;
@@ -26,37 +23,32 @@ class Mod {
   final String downloadUrl;
   final String author;
 
-  Mod(this.image, this.name, this.version, this.description, this.downloadUrl, this.author);
+  Resourcepack(this.image, this.name, this.version, this.description, this.downloadUrl, this.author);
 }
 
-class _GetModsState extends State<GetMods> {
-  String _selectedProfile = "Vanilla";
-  String _selectedVersion = "1.18.2";
+class _GetResourcepacksState extends State<GetResourcepacks> {
   String _searchQuery = "";
-  List<Mod> mods = [
-    Mod("https://play.teleporthq.io/static/svg/default-img.svg", "Optifine", "1.18.2", "Optifine is a mod that makes Minecraft run faster and look better.", "https://optifine.net/download", "sp614x"),
-    Mod("https://play.teleporthq.io/static/svg/default-img.svg", "Optifine", "1.18.2", "Optifine is a mod that makes Minecraft run faster and look better.", "https://optifine.net/download", "sp614x"),
-    Mod("https://play.teleporthq.io/static/svg/default-img.svg", "Optifine", "1.18.2", "Optifine is a mod that makes Minecraft run faster and look better.", "https://optifine.net/download", "sp614x"),
-    Mod("https://play.teleporthq.io/static/svg/default-img.svg", "Optifine", "1.18.2", "Optifine is a mod that makes Minecraft run faster and look better.", "https://optifine.net/download", "sp614x"),
-    Mod("https://play.teleporthq.io/static/svg/default-img.svg", "Optifine", "1.18.2", "Optifine is a mod that makes Minecraft run faster and look better.", "https://optifine.net/download", "sp614x"),
-    Mod("https://play.teleporthq.io/static/svg/default-img.svg", "Optifine", "1.18.2", "Optifine is a mod that makes Minecraft run faster and look better.", "https://optifine.net/download", "sp614x"),
+  List<Resourcepack> resourcepacks = [
+    Resourcepack("https://play.teleporthq.io/static/svg/default-img.svg", "Optifine", "1.18.2", "Optifine is a mod that makes Minecraft run faster and look better.", "https://optifine.net/download", "sp614x"),
+    Resourcepack("https://play.teleporthq.io/static/svg/default-img.svg", "Optifine", "1.18.2", "Optifine is a mod that makes Minecraft run faster and look better.", "https://optifine.net/download", "sp614x"),
+    Resourcepack("https://play.teleporthq.io/static/svg/default-img.svg", "Optifine", "1.18.2", "Optifine is a mod that makes Minecraft run faster and look better.", "https://optifine.net/download", "sp614x"),
+    Resourcepack("https://play.teleporthq.io/static/svg/default-img.svg", "Optifine", "1.18.2", "Optifine is a mod that makes Minecraft run faster and look better.", "https://optifine.net/download", "sp614x"),
+    Resourcepack("https://play.teleporthq.io/static/svg/default-img.svg", "Optifine", "1.18.2", "Optifine is a mod that makes Minecraft run faster and look better.", "https://optifine.net/download", "sp614x"),
+    Resourcepack("https://play.teleporthq.io/static/svg/default-img.svg", "Optifine", "1.18.2", "Optifine is a mod that makes Minecraft run faster and look better.", "https://optifine.net/download", "sp614x"),
   ];
 
   @override
   void initState() {
     super.initState();
-
-    _selectedVersion = widget.selectedVersion;
-    _selectedProfile = widget.selectedProfile;
   }
 
   void sidebarButtonClicked(String button) {
     if (button == "play") {
-      widget.navigatorKey.currentState!.push(MaterialPageRoute(builder: (context) => PlayGame(navigatorKey: widget.navigatorKey, selectedProfile: _selectedProfile, selectedVersion: _selectedVersion)));
+      widget.navigatorKey.currentState!.push(MaterialPageRoute(builder: (context) => PlayGame(navigatorKey: widget.navigatorKey)));
+    } else if (button == "instances") {
+      widget.navigatorKey.currentState!.push(MaterialPageRoute(builder: (context) => SelectVersion(navigatorKey: widget.navigatorKey)));
     } else if (button == "modpacks") {
       widget.navigatorKey.currentState!.push(MaterialPageRoute(builder: (context) => GetModpacks(navigatorKey: widget.navigatorKey)));
-    } else if (button == "resourcepacks") {
-      widget.navigatorKey.currentState!.push(MaterialPageRoute(builder: (context) => GetResourcepacks(navigatorKey: widget.navigatorKey)));
     }
   }
 
@@ -79,7 +71,7 @@ class _GetModsState extends State<GetMods> {
         textDirection: TextDirection.ltr,
         child: Row(
           children: [
-            Sidebar(onSidebarButtonPressed: sidebarButtonClicked, selected: 1),
+            Sidebar(onSidebarButtonPressed: sidebarButtonClicked, selected: 3),
             Container(
               color: const Color(0xFF000000),
               child: Stack(
@@ -87,7 +79,7 @@ class _GetModsState extends State<GetMods> {
                   SizedBox(
                       width: 879,
                       height: 500,
-                      child: ListView.builder(itemCount: mods.length, itemBuilder: (context, index) {
+                      child: ListView.builder(itemCount: resourcepacks.length, itemBuilder: (context, index) {
                         return Container(
                           height: 135,
                           width: 879,
@@ -118,8 +110,8 @@ class _GetModsState extends State<GetMods> {
                                     crossAxisAlignment: CrossAxisAlignment.start,
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
-                                      Text(mods[index].name, style: const TextStyle(color: Colors.white, fontSize: 32)),
-                                      Text(mods[index].description, style: const TextStyle(color: Color(0xFF595959), fontSize: 16)),
+                                      Text(resourcepacks[index].name, style: const TextStyle(color: Colors.white, fontSize: 32)),
+                                      Text(resourcepacks[index].description, style: const TextStyle(color: Color(0xFF595959), fontSize: 16)),
                                     ],
                                   ),
                                 ),
@@ -127,7 +119,7 @@ class _GetModsState extends State<GetMods> {
                                 Column(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                    Text(mods[index].author, style: const TextStyle(color: Color(0xFF595959), fontSize: 16, overflow: TextOverflow.ellipsis)),
+                                    Text(resourcepacks[index].author, style: const TextStyle(color: Color(0xFF595959), fontSize: 16, overflow: TextOverflow.ellipsis)),
                                     const SizedBox(height: 10),
                                     GestureDetector(
                                       onTap: () {
@@ -170,17 +162,17 @@ class _GetModsState extends State<GetMods> {
                               Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  const Padding(padding: EdgeInsets.only(top: 20), child: Text("SEARCH MODS", style: TextStyle(color: Color(0xFF4c4c4c), fontSize: 16, fontWeight: FontWeight.w900)),),
+                                  const Padding(padding: EdgeInsets.only(top: 20), child: Text("SEARCH RESOURCE PACKS", style: TextStyle(color: Color(0xFF4c4c4c), fontSize: 16, fontWeight: FontWeight.w900)),),
                                   const SizedBox(height: 10),
                                   SizedBox(
-                                    width: 550,
+                                    width: 700,
                                     height: 40,
                                     child: TextField(
                                       onChanged: (text) => {_searchQuery = text},
                                       decoration: InputDecoration(
                                         filled: true,
                                         fillColor: const Color(0xFF1c1c1c),
-                                        hintText: "Search for mods",
+                                        hintText: "Search for resource packs",
                                         hintStyle: const TextStyle(color: Color(0xFF4c4c4c), fontSize: 16),
                                         border: OutlineInputBorder(
                                           borderRadius: BorderRadius.circular(10),
@@ -208,46 +200,6 @@ class _GetModsState extends State<GetMods> {
                                           borderRadius: BorderRadius.circular(50),
                                         ),
                                         child: const Center(child: Icon(Icons.search, color: Colors.white)),
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              Center(
-                                child: Padding(
-                                  padding: const EdgeInsets.only(left: 20),
-                                  child: GestureDetector(
-                                    onTap: () => {exportProfile()},
-                                    child: MouseRegion(
-                                      cursor: SystemMouseCursors.click,
-                                      child: Container(
-                                        width: 50,
-                                        height: 50,
-                                        decoration: BoxDecoration(
-                                          color: const Color(0xFF1c1c1c),
-                                          borderRadius: BorderRadius.circular(50),
-                                        ),
-                                        child: Center(child: SvgPicture.asset("assets/icons/download.svg", width: 24, height: 24, color: Colors.white)),
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              Center(
-                                child: Padding(
-                                  padding: const EdgeInsets.only(left: 20),
-                                  child: GestureDetector(
-                                    onTap: () => {uploadMod()},
-                                    child: MouseRegion(
-                                      cursor: SystemMouseCursors.click,
-                                      child: Container(
-                                        width: 50,
-                                        height: 50,
-                                        decoration: BoxDecoration(
-                                          color: const Color(0xFF1c1c1c),
-                                          borderRadius: BorderRadius.circular(50),
-                                        ),
-                                        child: Center(child: SvgPicture.asset("assets/icons/upload.svg", width: 24, height: 24, color: Colors.white)),
                                       ),
                                     ),
                                   ),
